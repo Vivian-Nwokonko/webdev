@@ -1,0 +1,153 @@
+/* how to do a general styling which you can target on other styling. its called custom property*/
+:root{
+    --bgcolor: red;
+    --pad: 10px;
+}
+
+
+/* this is a universal collector */
+*{ padding: 0;
+    margin: 0;
+    text-decoration: none;
+    /* things you can input within the universal selector....
+    list-style: none;
+    font-family: 'Courier New', Courier, monospace;
+ */
+}
+
+/* how to display more than one background image */
+
+.bg {
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(../img/pexels-craig-adderley-1563356.jpg);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-name: bg;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 5s;
+    
+}
+
+@keyframes bg{
+    0%{
+        background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(../img/pexels-craig-adderley-1563356.jpg);
+    }
+    20%{
+        background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(../img/marvin-meyer-SYTO3xs06fU-unsplash.jpg);
+    }
+    30%{
+        background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(../img/pexels-christina-morillo-1181605.jpg);
+    }
+    }
+
+    .bgcontent{
+        text-align: center;
+        color: white;
+        padding-top: 20%;
+    }
+
+    /* how to give a button a shadow effect */
+
+.bgcontent button {
+    background-color: transparent;
+    padding: var(--pad) 20px;  /*remember that the var(--pad) is gotten from the custom property 'root' --pad is a variable(var) */
+    border: 2px solid white;
+    /* box-shadow: 10px 5px 5px blue;
+     */
+     transition: 1s ease-out;
+     /* transition: 1s ease-in;
+     transition: 1s ease-in-out; */
+}
+
+.bgcontent button:hover {
+    box-shadow:inset 200px 0px 0px blue ;
+   
+}
+
+/* nav styling */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: green;
+    padding: 10px 20px;
+
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0px 10px;
+    padding: 0px 30px;
+}
+/* how to make a navigation key to have a line below it when you click on it */
+nav ul li::after{
+    content: '';
+    height: 2px;
+    width: 0px;
+    background-color: white;
+    display: block;
+    transition: 1s;
+}
+
+nav ul li:hover::after{
+    width: 100%;
+}
+
+
+    /*animation effect using transform property  */
+    .card {
+        display: flex;
+        text-align: justify;
+        gap: 30px;
+        padding: 0 10%;
+        margin-top: 20px;
+
+}
+
+.content1 {
+    background-color: lightblue;
+    padding: 20px;
+    animation-name: content1;
+    transition: 1s;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+.content1 h1 {
+    text-align: center;
+    }
+
+@keyframes content1 {
+    100% {
+        transform: translateY(50px);
+    }
+}
+
+/* pseudo class with different ways of targeting a specific element */
+    
+/* ul li:nth-child(1) {
+    color: blue;
+} */
+
+ul li:first-child {
+    color: red;
+}
+
+ul li:last-child {
+    color: blue;
+
+}
+
+/* pseudo element styling used for targeting  particular part of an element */
+
+
+.about p::first-letter {
+    font-size: 30px;
+}
+
+.about p::first-line {
+    background-color: var(--bgcolor);  /*illustration of where I added the custom ptoperty of --bgcolor*/
+}
+

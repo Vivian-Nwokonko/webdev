@@ -1,0 +1,50 @@
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+.bg{
+    background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.9)), url(../img/20210104_164121.jpg);
+    height: 80vh; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding-top: 30%;
+}
+
+/*position*/
+
+.sticky {
+    background-color: red;
+    width: 5%;
+    padding: 10%;
+    position: sticky;
+    top: 0;
+}
+
+.relative {
+    background-color: lightcoral;
+    width: 10%;
+    padding: 5%;
+    position: relative;
+    right: 10%;
+    top: 10%;
+}
+
+.absolute{
+    background-color: lightseagreen;
+    width: 10%;
+    padding: 10%;
+    position: absolute;
+    bottom: 0%;
+    right: 10%;
+}
+
+.fixed{
+    background-color: magenta;
+    width: 20%;
+    padding: 10%;
+    position: fixed;
+    top: 0;
+}
